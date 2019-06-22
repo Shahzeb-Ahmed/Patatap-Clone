@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fun With Circles</title>
+    <style>
+      canvas {
+        width: 100%;
+        background: black;
+        height: 100%;
+        padding: 0;
+      }
+
+      body, html {
+        height: 100%;
+        margin:0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.1/paper-full.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+      var keyData = {
+        a: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/bubbles.mp3']
+            })
+        },
+    
+        b: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/clay.mp3']
+            })
+        },
+    
+        c: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/confetti.mp3']
+            })
+        },
+    
+        d: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/corona.mp3']
+            })
+        },
+    
+        e: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/dotted-spiral.mp3']
+            })
+        },
+    
+        f: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/flash-1.mp3']
+            })
+        },
+    
+        g: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/flash-2.mp3']
+            })
+        },
+    
+        h: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/flash-3.mp3']
+            })
+        },
+
+        i: {
+          color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+          sound: new Howl({
+              src: ['sounds/pinwheel.mp3']
+          })
+        },
+    
+        j: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/glimmer.mp3']
+            })
+        },
+    
+        k: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/moon.mp3']
+            })
+        },
+    
+        l: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/piston-1.mp3']
+            })
+        },
+    
+        m: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/piston-2.mp3']
+            })
+        },
+    
+        n: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/piston-3.mp3']
+            })
+        },
+    
+        o: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/prism-1.mp3']
+            })
+        },
+    
+        p: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/prism-2.mp3']
+            })
+        },
+    
+        q: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/prism-3.mp3']
+            })
+        },
+    
+        r: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/splits.mp3']
+            })
+        },
+    
+        s: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/squiggle.mp3']
+            })
+        },
+    
+        t: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/strike.mp3']
+            })
+        },
+    
+        u: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/suspension.mp3']
+            })
+        },
+    
+        v: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/timer.mp3']
+            })
+        },
+    
+        w: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/ufo.mp3']
+            })
+        },
+    
+        x: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/veil.mp3']
+            })
+        },
+    
+        y: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/wipe.mp3']
+            })
+        },
+    
+        z: {
+            color: 'rgb'+'('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')',
+            sound: new Howl({
+                src: ['sounds/zig-zag.mp3']
+            })
+        }
+      }
+      
+      var circles = [];
+
+      function onKeyDown(event) {
+        if(keyData[event.key]) {
+          var maxPoint = new Point(view.size.width, view.size.height);
+          var randomPoint = Point.random();
+          var point = maxPoint * randomPoint;
+          var circle = new Path.Circle(point, 200);
+          circle.fillColor = keyData[event.key].color;
+          keyData[event.key].sound.play();
+          circles.push(circle);
+        }
+      }
+
+      var hueChange = Math.floor(Math.random() * (10) - 5 );
+
+      function onFrame(event) {
+        for(var i = 0; i < circles.length; i++) {
+          circles[i].fillColor.hue += hueChange;
+          circles[i].scale(.9);
+          setTimeout(function(){
+            circles.remove[i];}, 1000);        
+        }
+      }
+      
+    </script>
+  </head>
+
+  <body>
+
+    <canvas id="myCanvas" resize></canvas>
+
+  </body>
+</html>
